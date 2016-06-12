@@ -6,4 +6,4 @@ parallel algorithm based on cuda
 
 ##License
 
-sinaWeibo is published under the MIT License (MIT) License. See the LICENSE file for more.
+algorithms-cuda is published under the MIT License (MIT) License. See the LICENSE file for more.
