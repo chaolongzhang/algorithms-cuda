@@ -4,12 +4,12 @@
 
 #include <iostream>
 
-#include "reduction1.h"
-#include "reduction1_template.h"
-#include "reduction2.h"
-#include "reduction2_template.h"
-#include "reduction3.h"
-#include "reduction3_template.h"
+#include "reduction1.cuh"
+#include "reduction1_template.cuh"
+#include "reduction2.cuh"
+#include "reduction2_template.cuh"
+#include "reduction3.cuh"
+#include "reduction3_template.cuh"
 
 typedef void (*pfnReduction)(int*, int*, const int*, size_t, int, int);
 

@@ -7,13 +7,15 @@
 编译：
 
 ```shell
-nvcc -I ~/NVIDIA_CUDA-7.5_Samples/common/inc reduction_thrust.cu -o reduction_thrust.exe
-nvcc -I ~/NVIDIA_CUDA-7.5_Samples/common/inc reduction_cuda.cu -o reduction_cuda.exe
+nvcc -I ~/NVIDIA_CUDA-7.5_Samples/common/inc reduction_thrust.cu -o reduction_thrust.gpu
+nvcc -I ~/NVIDIA_CUDA-7.5_Samples/common/inc reduction_cuda.cu -o reduction_cuda.gpu
 ```
 
 运行：
 
 ```
-./reduction_thrust.exe
-./reduction_cuda.exe
+./reduction_thrust.gpu
+./reduction_cuda.gpu
 ```
+
+更多请参考：[CUDA并行算法系列之规约](http://zh.5long.me/2016/algorithms-on-cuda-reduction/)
