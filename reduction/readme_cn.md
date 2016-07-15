@@ -4,18 +4,12 @@
 
 测试代码有使用[thrust](http://thrust.github.io/)和不使用thrust两个版本。
 
-编译：
+# 使用
 
 ```shell
-nvcc -I ~/NVIDIA_CUDA-7.5_Samples/common/inc reduction_thrust.cu -o reduction_thrust.gpu
-nvcc -I ~/NVIDIA_CUDA-7.5_Samples/common/inc reduction_cuda.cu -o reduction_cuda.gpu
+make
+./reduction_cuda.exe
+./reduction_thrust.exe
 ```
 
-运行：
-
-```
-./reduction_thrust.gpu
-./reduction_cuda.gpu
-```
-
-更多请参考：[CUDA并行算法系列之规约](http://zh.5long.me/2016/algorithms-on-cuda-reduction/)
+更多请参考：[CUDA并行算法系列之规约](http://zh.5long.me/2016/algorithms-on-cuda-reduction/)。
