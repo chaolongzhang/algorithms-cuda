@@ -83,7 +83,7 @@ int main(int argc, char const *argv[])
 
     int numTests = sizeof(rgTests) / sizeof(rgTests[0]);
 
-    // memoty copy
+    // memory copy
     checkCudaErrors(cudaMemcpy(d_nums, h_nums, nums_mem_size, cudaMemcpyHostToDevice));
 
     for (int i = 0; i < numTests; ++i)

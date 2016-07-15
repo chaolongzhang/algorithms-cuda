@@ -1,20 +1,21 @@
-# FFT快速卷积算法
+# Fast convolution algorithm based on FFT
 
-* convolve.py Python实现的卷积算法
-* convolve.cuh/convolve.cu 基于CUDA的并行卷积算法
-* convolvefft.cuh/convolvefft.cu 基于cuFFT实现的CUDA并行快速FFT卷积算法
+* convolve.py Convolution algorithm implemented in Python
+* convolve.cuh/convolve.cu CUDA-based parallel convolution algorithm
+* convolvefft.cuh/convolvefft.cu Fast convolution algorithm implemented CUDA cuFFT
 
-编译：
+# Usage
 
 ```shell
-nvcc -I ~/NVIDIA_CUDA-7.5_Samples/common/inc convolve.cu 
-nvcc -I ~/NVIDIA_CUDA-7.5_Samples/common/inc convolvefft.cu -lcufft
+make
+./convolve.exe
+./convolvefft.exe
 ```
 
-运行：
+See [Makefile](Makefile) for detail.
 
-```
-./a.out
-```
+# More
 
-更多请参考：[CUDA并行算法系列之FFT快速卷积](http://blog.5long.me/2016/algorithms-on-cuda-fft-convolution/)
+For more information, read my Blog [CUDA并行算法系列之FFT快速卷积](http://blog.5long.me/2016/algorithms-on-cuda-fft-convolution/)
+
+如果你会中文，请查看[中文版](readme_cn.md)

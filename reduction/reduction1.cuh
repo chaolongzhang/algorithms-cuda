@@ -1,4 +1,4 @@
-// 两遍规约
+// Two steps reduction
 __global__ void reduction1_kernel(int *out, const int *in, size_t N)
 {
     // lenght = threads (BlockDim.x)

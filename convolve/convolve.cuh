@@ -1,5 +1,5 @@
 
-// 直接计算卷积
+// Direct calculation convolution
 __global__ void conv_kernel(const float *ina, const float *inb, float *out, size_t len_a, size_t len_b, size_t len_out)
 {
     const int tid = blockIdx.x * blockDim.x + threadIdx.x;
@@ -20,7 +20,7 @@ __global__ void conv_kernel(const float *ina, const float *inb, float *out, size
     out[tid] = sum;
 }
 
-// 使用共享内存优化
+// Optimized by shared memory
 __global__ void conv2_kernel(const float *ina, const float *inb, float *out, size_t len_a, size_t len_b, size_t len_out)
 {
     const int tid = blockIdx.x * blockDim.x + threadIdx.x;
@@ -60,7 +60,7 @@ __global__ void conv2_kernel(const float *ina, const float *inb, float *out, siz
     out[tid] = sum;
 }
 
-// 使用共享内存和常量内存优化
+// Optimized by shared meory and constant memory
 __constant__ static float c_b[1024];
 __global__ void conv3_kernel(const float *ina, float *out, size_t len_a, size_t len_b, size_t len_out)
 {

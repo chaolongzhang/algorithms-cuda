@@ -1,21 +1,23 @@
-# 规约
+# Redution algorithms
 
-包含两遍规约、基于原子操作的单遍规约和非原子操作的单遍规约已经对应的基于模板的循环展开。
+ two steps reduction, single step reudtion based on  atomic operations and non-atomic operations, and template-based loop expansion.
 
-测试代码有使用[thrust](http://thrust.github.io/)和不使用thrust两个版本。
+ The test code has 
 
-编译：
+There are two versions test code using [thrust](http://thrust.github.io/) and without thrust.
+
+# Usage
 
 ```shell
-nvcc -I ~/NVIDIA_CUDA-7.5_Samples/common/inc reduction_thrust.cu -o reduction_thrust.gpu
-nvcc -I ~/NVIDIA_CUDA-7.5_Samples/common/inc reduction_cuda.cu -o reduction_cuda.gpu
+make
+./reduction_cuda.exe
+./reduction_thrust.exe
 ```
 
-运行：
+See [Makefile](Makefile) for detail.
 
-```
-./reduction_thrust.gpu
-./reduction_cuda.gpu
-```
+# More
 
-更多请参考：[CUDA并行算法系列之规约](http://zh.5long.me/2016/algorithms-on-cuda-reduction/)
+For more information, read my Blog[CUDA并行算法系列之规约](http://zh.5long.me/2016/algorithms-on-cuda-reduction/)
+
+如果你会中文，请查看[中文版](readme_cn.md)

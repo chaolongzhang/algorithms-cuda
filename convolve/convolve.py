@@ -18,7 +18,7 @@ def conv2(a, b):
     M = len(b)
     YN = N + M - 1
     y = [0.0 for i in range(YN)]
-    b = np.array(b)[::-1]       # 逆序
+    b = np.array(b)[::-1]       # Reverse
     for n in range(YN):
         for m in range(M):
             k = n - M + m + 1;
@@ -60,9 +60,9 @@ def time_test():
         print(count)
         a = np.ones(count)
         b = np.ones(count)
-        t1 = run(conv, a, b)    # 直接卷积
+        t1 = run(conv, a, b)    # Direct calculation convolution
         t2 = run(conv2, a, b)
-        t3 = run(convfft, a, b) # FFT卷积
+        t3 = run(convfft, a, b) # Fast convotution by FFT
         n_list.append(count)
         t1_list.append(t1)
         t2_list.append(t2)

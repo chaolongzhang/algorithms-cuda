@@ -1,4 +1,4 @@
-// 两遍规约
+// Two steps reduction with template-based loop expansion
 template<unsigned int numThreads>
 __global__ void reduction1_kernel(int *out, const int *in, size_t N)
 {
