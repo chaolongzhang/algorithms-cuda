@@ -11,7 +11,7 @@ __global__ void scan1_kernel(int *nums, size_t N)
         lgN = log2f(N);
     }
 
-    // Bottom-up
+    // upsweep hpase
     for (int d = 0; d < lgN; ++d)
     {
         int d21 = powf(2, d + 1);
@@ -23,7 +23,7 @@ __global__ void scan1_kernel(int *nums, size_t N)
         __syncthreads();
     }
 
-    // top down
+    // downsweep phase
     if (tid == 0)
     {
         nums[N - 1] = 0;

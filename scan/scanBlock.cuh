@@ -108,11 +108,11 @@ void sacnFan(T *out, const T *in, size_t N, int b)
     size_t numPartials = (N) / b;
 
     const unsigned int maxBlocks = 150;
-    unsigned int numBlocks = min(numPartials, maxBlocks);
-    checkCudaErrors(cudaMalloc(&gPartials, numPartials * sizeof(T)));
+    unsigned int numBlocks = min( numPartials, maxBlocks );
+    checkCudaErrors( cudaMalloc( &gPartials, numPartials * sizeof(T) ) );
     scanAndWritePartials<T, true><<<numBlocks, b, b * sizeof(T)>>>(out, gPartials, in, N, numPartials);
-    sacnFan<T>(gPartials, gPartials, numPartials, b);
-    scanAddBaseSums<T><<<numBlocks, b>>>(out, gPartials, N, numPartials);
-
+    sacnFan<T>( gPartials, gPartials, numPartials, b );
+    scanAddBaseSums<T><<<numBlocks, b>>>( out, gPartials, N, numPartials );
+    cudaFree( gPartials );
 }
 
